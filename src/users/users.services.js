@@ -40,9 +40,9 @@ const registerUser = (req, res) => {
     lastName &&
     email &&
     password && phone &&
-    birthday &&
-    gender &&
-    country
+    birthday 
+    // gender &&
+    // country
   ) {
       //? ejecutamos controller
     usersControllers.createUser({firstName,
@@ -119,7 +119,7 @@ const updateMyUser = (req, res) => {
   const id = req.user.id 
   const { firstName, lastName, phone, birthday, gender, country, status } = req.body
 
-  usersControllers.updateUser(id, {firstName, lastName, phone, birthday, gender, country, status} )
+  usersControllers.updateUser(id, {firstName, lastName, phone, birthday, gender, country} )
   .then(data=>{
       res.status(200).json(data)
   })
@@ -142,7 +142,6 @@ const deleteMyUser = (req, res) =>{
       res.status(404).json({message: err.message})
   })
 }
-
 
 
 

@@ -24,13 +24,13 @@ module.exports = (passport) => {
                 if(!response){
                     return done(null, false)
                 }
-                console.log('decode JWT', decoded)
+                console.log('decoded JWT', decoded)
                 return done(null, decoded)
             }catch (error) {
-                return done(error, false)
+                return done(error, false);
             }
         } )
     )
 
-}
+};
 
